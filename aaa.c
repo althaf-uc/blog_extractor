@@ -1,4 +1,4 @@
-#programme to print pattern
+
 #include<stdio.h>
 void main()
 {
