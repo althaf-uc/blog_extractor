@@ -1,0 +1,26 @@
+class contentinline(admin.StackedInline):
+	model=post_content
+	extra=0
+class commentinline(admin.StackedInline):
+	model=additional_information
+	extra=0
+class postinline(admin.StackedInline):
+	model=post
+	extra=0
+	
+
+class authorAdmin(admin.ModelAdmin):
+    fields = ['author_name']
+    inlines=[postinline]
+    list_display=('author_name',)
+    
+
+  
+  
+class postAdmin(admin.ModelAdmin):
+	inlines=[contentinline,commentinline]
+	list_display=('title','post_date','post_time','file_path','author_link')
+        
+        def author_link(self, obj):
+        	return obj.author.author_name
+	author_link.short_description = 'Author Name'

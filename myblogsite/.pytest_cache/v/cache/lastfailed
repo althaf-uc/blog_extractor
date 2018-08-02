@@ -1,0 +1,16 @@
+{
+  "test_abc.py::TestClass::()::test_method2": true,
+  "test_abc.py::TestDirectoryInit::()::test_cwd_again_starts_empty": true,
+  "test_abc.py::test_compare": true,
+  "test_abc.py::test_customer_records": true,
+  "test_abc.py::test_ehlo": true,
+  "test_abc.py::test_f": true,
+  "test_abc.py::test_func1": true,
+  "test_abc.py::test_func2": true,
+  "test_abc.py::test_histogram": true,
+  "test_abc.py::test_match": true,
+  "test_abc.py::test_mytest": true,
+  "test_abc.py::test_noop": true,
+  "test_abc.py::test_parse_title_exception": true,
+  "test_abc.py::test_set_comparison": true
+}

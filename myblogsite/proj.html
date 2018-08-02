@@ -1,0 +1,4105 @@
+<!DOCTYPE html>
+<html class='v2' dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<link href='https://www.blogger.com/static/v1/widgets/2437439463-css_bundle_v2.css' rel='stylesheet' type='text/css'/>
+<link href='https://blog.python.org/favicon.ico' rel='icon' type='image/x-icon'/>
+<meta content='blogger' name='generator'/>
+<link href='https://blog.python.org/feeds/posts/default' rel='alternate' title='Python Insider - Atom' type='application/atom+xml'/>
+<link href='https://blog.python.org/feeds/posts/default?alt=rss' rel='alternate' title='Python Insider - RSS' type='application/rss+xml'/>
+<link href='https://www.blogger.com/feeds/3941553907430899163/posts/default' rel='service.post' title='Python Insider - Atom' type='application/atom+xml'/>
+<!--[if IE]><script type="text/javascript" src="https://www.blogger.com/static/v1/jsbin/2591933621-ieretrofit.js"></script> <![endif]-->
+<meta content='https://blog.python.org/' name='og:url:domain'/>
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>Python Insider</title>
+<meta name='author' value='The Python Community'/>
+<style id='page-skin-1' type='text/css'><!--
+
+--></style>
+<style id='template-skin-1' type='text/css'><!--
+
+--></style>
+<!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+<style type='text/css'>
+body {
+  font-family: Arial,Tahoma,Helvetica,FreeSans,sans-serif;
+  font-size: 12px;
+  color: #111;
+  background:#3272ac;
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.21, rgb(50,114,172)),
+    color-stop(0.84, rgb(250,229,164))
+);
+background-image: -moz-linear-gradient(
+    center bottom,
+    #3272ac 21%,
+    #fae5a4 84%
+);
+
+background-repeat:no-repeat;
+}
+
+h2 {font-size: 1em; }
+h3 { font-size: 1.2em}
+
+#wholeC {
+  background-color:#fff;
+  width: 90%;
+  margin: 0 auto 2em auto;
+}
+
+#cmain {
+  float:left;
+  width: 68%;
+  padding:0;
+  margin: 2em 0 2em 2%;
+}
+#cside {
+  float:right;
+  width: 23%;
+  margin-right: 2%;
+  margin-top: 2em;
+  margin-bottom: 3em;
+  padding-bottom: 3em;
+  font-size: 0.95em;
+}
+#cside a {
+font-size: 0.95em
+}
+#cside h2 {
+text-transform:uppercase;
+color: #715707
+}
+
+a { color: #142f46 }
+a:hover { color: #557 }
+a:visited { color: #334 }
+
+h2.date-header { font-size: 13px; }
+h3.post-title { font-size: 16px; margin-bottom: 1em; }
+
+div.date-outer {
+/* blog post container */
+margin: 0 0 2em 0;
+padding: 0;
+font-size:13px;
+line-height:133%;
+}
+
+header#chead {
+display: block;
+margin: 0 auto 1em auto;
+padding: 0;
+width: 70%;
+height:145px;
+overflow: hidden;
+color: #222;
+background: #fff;
+border-bottom: 1px solid #ddd; 
+
+}
+#Header1 {
+font-size:16px;
+}
+#Header1 .description {
+position:relative;
+top: -35px;
+left: 116px;
+}
+
+.wshad {
+    padding: 2em 8px;
+    border: 1px solid #99A;
+    -moz-box-shadow: 0 5px 10px #222;
+    -webkit-box-shadow: 0 5px 10px #222;
+    box-shadow: 0 5px 10px #222;
+}
+
+.post-footer {
+border-top:1px outset #ddd;border-right:1px inset #ddd;
+background-color: #f5f5f5;
+padding: 10px 5px;
+position:relative;
+left:-1.2em;
+opacity: 0.75;
+font-size:0.9em;
+}
+
+</style>
+<script src='https://code.jquery.com/jquery-3.2.1.slim.min.js'></script>
+<script>
+$(document).ready(function() {
+  $("a").each(function() {
+    var i = $(this).attr("href");
+    if (!i) {
+      return;
+    }
+    var n = i.replace("https://pythoninsider.blogspot.com", "https://blog.python.org");
+    $(this).attr("href", function() {
+      return n
+    })
+  })
+});
+</script>
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=3941553907430899163&amp;zx=b24fdbe2-f2b9-41ed-a2bc-6bcfb584a9d3' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=3941553907430899163&amp;zx=b24fdbe2-f2b9-41ed-a2bc-6bcfb584a9d3' rel='stylesheet'/></noscript>
+
+</head>
+<body>
+<div class='navbar section' id='navbar'><div class='widget Navbar' data-version='1' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"></div>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar.g?targetBlogID\x3d3941553907430899163\x26blogName\x3dPython+Insider\x26publishMode\x3dPUBLISH_MODE_BLOGSPOT\x26navbarType\x3dBLUE\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttps://pythoninsider.blogspot.com/search\x26blogLocale\x3den\x26v\x3d2\x26homepageUrl\x3dhttps://pythoninsider.blogspot.com/\x26vt\x3d-980863490298690034',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div id='wholeC'>
+<header id='chead'>
+<div class='header section' id='header'><div class='widget Header' data-version='1' id='Header1'>
+<div id='header-inner'>
+<a href='https://pythoninsider.blogspot.com/' style='display: block'>
+<img alt="Python Insider" height="139px; " id="Header1_headerimg" src="//2.bp.blogspot.com/-Bhao0h7cGF0/TY-us8aVYCI/AAAAAAAAAYw/IhOLTFSw34E/s1600/python-insider-header.png" style="display: block" width="600px; ">
+</a>
+<div class='descriptionwrapper'>
+<p class='description'><span>Python core development news and information.</span></p>
+</div>
+</div>
+</div></div>
+</header>
+<div id='cmain'>
+<section id='ccontent'>
+<div class='main section' id='main'><div class='widget Blog' data-version='1' id='Blog1'>
+<div class='blog-posts hfeed'>
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Wednesday, June 27, 2018</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='2856959947997709845'></a>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content'>
+Python&nbsp;<b><a href="https://www.python.org/downloads/release/python-370/" target="_blank">3.7.0</a></b>&nbsp;is now available (and so is <a href="https://www.python.org/downloads/release/python-366/" target="_blank">3.6.6</a>)!<br />
+<br />
+<div>
+<div>
+On behalf of the Python development community and the Python 3.7 release team, we are pleased to announce the availability of <b>Python 3.7.0</b>. Python 3.7.0 is the newest feature release of the Python language, and it contains many new features and optimizations. You can find Python 3.7.0 here:</div>
+<div>
+&nbsp; &nbsp;&nbsp;<a href="https://www.python.org/downloads/release/python-370/">https://www.python.org/downloads/release/python-370/</a></div>
+<div>
+<br /></div>
+<div>
+Most third-party distributors of Python should be making 3.7.0 packages available soon.</div>
+<div>
+<br /></div>
+<div>
+See the&nbsp;<a href="https://docs.python.org/3.7/whatsnew/3.7.html" target="_blank">What&#8217;s New In Python 3.7</a>&nbsp;document for more information about features included in the 3.7 series. &nbsp;Detailed information about the changes made in 3.7.0 can be found in its&nbsp;<a href="https://docs.python.org/3.7/whatsnew/changelog.html#python-3-7-0-final" target="_blank">change log</a>. &nbsp;Maintenance releases for the 3.7 series will follow at regular intervals starting in July of 2018.</div>
+<div>
+<br /></div>
+<div>
+We hope you enjoy Python 3.7!</div>
+<div>
+<br /></div>
+<div>
+P.S. We are also happy to announce the availability of <b>Python 3.6.6</b>, the next maintenance release of Python 3.6:</div>
+<div>
+&nbsp; &nbsp; <a href="https://www.python.org/downloads/release/python-366/">https://www.python.org/downloads/release/python-366/</a></div>
+<div>
+<br /></div>
+<div>
+Thanks to all of the many volunteers who help make Python Development and these releases possible! &nbsp;Please consider supporting our efforts by volunteering yourself or through organization contributions to the&nbsp;<a href="https://www.python.org/psf/" target="_blank">Python Software Foundation</a>.</div>
+</div>
+<div>
+<br /></div>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Ned Deily</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='https://pythoninsider.blogspot.com/2018/06/python-3.html' rel='bookmark' title='permanent link'><abbr class='published' title='2018-06-27T20:00:00-04:00'>8:00 PM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+</span>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2856959947997709845&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2856959947997709845&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2856959947997709845&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2856959947997709845&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2856959947997709845&target=pinterest' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a><div class='goog-inline-block google-plus-share-container'><g:plusone source='blogger:blog:plusone' href='http://pythoninsider.blogspot.com/2018/06/python-3.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+Labels:
+<a href='https://pythoninsider.blogspot.com/search/label/releases' rel='tag'>releases</a>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'><span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+          </div></div>
+        
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Tuesday, June 12, 2018</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='7832107410943607536'></a>
+<h3 class='post-title entry-title'>
+<a href='https://pythoninsider.blogspot.com/2018/06/python-370rc1-and-366rc1-now-available.html'>Python 3.7.0rc1 and 3.6.6rc1 now available for testing</a>
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content'>
+Python&nbsp;<b><a href="https://www.python.org/downloads/release/python-370rc1/" target="_blank">3.7.0rc1</a></b>&nbsp;and&nbsp;<b><a href="https://www.python.org/downloads/release/python-366rc1/" target="_blank">3.6.6rc1</a></b>&nbsp;are now available. 3.7.0rc1 is the&nbsp;<b>final planned release preview</b>&nbsp;of&nbsp;<b>Python 3.7</b>, the next feature release of Python.&nbsp;3.6.6rc1 is the<b>&nbsp;release preview</b>&nbsp;of the next maintenance release of&nbsp;<b>Python 3.6</b>, the current release of Python. Assuming no critical problems are found prior to <b>2018-06-27</b>, the <b>scheduled release dates for 3.7.0 and 3.6.6,</b> no code changes are planned between these release candidates and the final releases.&nbsp;These release candidates are intended to give you the opportunity to test the new features and bug fixes in 3.7.0 and 3.6.6 and to prepare your projects to support them. We strongly encourage you to test your projects and report issues found to&nbsp;<a href="https://bugs.python.org/" target="_blank">bugs.python.org</a>&nbsp;as soon as possible. Please keep in mind that these are preview releases and, thus, their use is not recommended for production environments. &nbsp;<i>Attention&nbsp;macOS users</i>: there is now a new installer variant for macOS 10.9+ that includes a built-in version of Tcl/Tk 8.6. This variant will become the default version when 3.7.0 releases. &nbsp;Check it out!<br />
+<br />
+You can find these releases and more information here:<br />
+<div style="margin: 0px;">
+&nbsp; &nbsp;&nbsp;<a href="https://www.python.org/downloads/release/python-370rc1/" target="_blank">https://www.python.org/downloads/release/python-370rc1/</a><br />
+<div>
+&nbsp; &nbsp;&nbsp;<a href="https://www.python.org/downloads/release/python-366rc1/" target="_blank">https://www.python.org/downloads/release/python-366rc1/</a></div>
+<div>
+<div style="margin: 0px;">
+<div>
+<br /></div>
+</div>
+</div>
+<div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Ned Deily</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='https://pythoninsider.blogspot.com/2018/06/python-370rc1-and-366rc1-now-available.html' rel='bookmark' title='permanent link'><abbr class='published' title='2018-06-12T16:26:00-04:00'>4:26 PM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+</span>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=7832107410943607536&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=7832107410943607536&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=7832107410943607536&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=7832107410943607536&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=7832107410943607536&target=pinterest' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a><div class='goog-inline-block google-plus-share-container'><g:plusone source='blogger:blog:plusone' href='http://pythoninsider.blogspot.com/2018/06/python-370rc1-and-366rc1-now-available.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+Labels:
+<a href='https://pythoninsider.blogspot.com/search/label/releases' rel='tag'>releases</a>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'><span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+          </div></div>
+        
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Thursday, May 31, 2018</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='8246071885269354121'></a>
+<h3 class='post-title entry-title'>
+<a href='https://pythoninsider.blogspot.com/2018/05/python-370b5-bonus-beta-is-now.html'>Python 3.7.0b5, a bonus beta, is now available for testing</a>
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content'>
+A 3.7 update: Python&nbsp;<b><a href="https://www.python.org/downloads/release/python-370b5/" target="_blank">3.7.0b5</a></b>&nbsp;is now the&nbsp;<b>final beta preview</b>&nbsp;of&nbsp;<b>Python 3.7</b>, the next feature release of Python. &nbsp;3.7.0b4 <i>was</i> intended to be the final beta but, due to some unexpected compatibility issues discovered during beta testing of third-party packages, we decided to revert some changes in how Python's 3.7 <a href="https://docs.python.org/3.7/library/ast.html">Abstract Syntax Tree parser</a> deals with docstrings; <b>3.7.0b5</b> now behaves like 3.6.x and previous releases (refer to <a href="https://docs.python.org/3.7/whatsnew/changelog.html#python-3-7-0-beta-5">the 3.7.0b5 changelog</a> for more information). &nbsp;<b>If your code makes use of the <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">ast</span> module, you are strongly encouraged to test (or retest) that code with 3.7.0b5, especially if you previously made changes to work with earlier preview versons of 3.7.0.</b>&nbsp; As always, please report issues found to&nbsp;<a href="https://bugs.python.org/" target="_blank">bugs.python.org</a>&nbsp;as soon as possible. Please keep in mind that this is a preview release and its use is not recommended for production environments. &nbsp;<i>Attention&nbsp;macOS users</i>: there is now a new installer variant for macOS 10.9+ that includes a built-in version of Tcl/Tk 8.6. This variant is expected to become the default version when 3.7.0 releases. &nbsp;Check it out!<br />
+<br />
+The next (and final, we hope!) preview release will be&nbsp;<b>the release candidate</b>&nbsp;which is now planned for&nbsp;<b>2018-06-11</b>&nbsp;followed by the&nbsp;<b>official release of 3.7.0,</b>&nbsp;now planned for&nbsp;<b>2018-06-27</b>. You can find Python 3.7.0b5 and more information here:<br />
+<div style="margin: 0px;">
+&nbsp; &nbsp;&nbsp;<a href="https://www.python.org/downloads/release/python-370b5/" target="_blank">https://www.python.org/downloads/release/python-370b5/</a><br />
+<div>
+<br /></div>
+<div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Ned Deily</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='https://pythoninsider.blogspot.com/2018/05/python-370b5-bonus-beta-is-now.html' rel='bookmark' title='permanent link'><abbr class='published' title='2018-05-31T00:30:00-04:00'>12:30 AM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+</span>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=8246071885269354121&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=8246071885269354121&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=8246071885269354121&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=8246071885269354121&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=8246071885269354121&target=pinterest' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a><div class='goog-inline-block google-plus-share-container'><g:plusone source='blogger:blog:plusone' href='http://pythoninsider.blogspot.com/2018/05/python-370b5-bonus-beta-is-now.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+Labels:
+<a href='https://pythoninsider.blogspot.com/search/label/releases' rel='tag'>releases</a>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'><span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+          </div></div>
+        
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Wednesday, May 2, 2018</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='2017589384609424560'></a>
+<h3 class='post-title entry-title'>
+<a href='https://pythoninsider.blogspot.com/2018/05/python-370b4-final-37-beta-now.html'>Python 3.7.0b4, final 3.7 beta, now available for testing</a>
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content'>
+Python&nbsp;<b><a href="https://www.python.org/downloads/release/python-370b4/" target="_blank">3.7.0b4</a></b>&nbsp;is the&nbsp;<b>final beta preview</b>&nbsp;of&nbsp;<b>Python 3.7</b>, the next feature release of Python. Beta releases are intended to give you the opportunity to test new features and bug fixes and to prepare your projects to support the new feature release. We strongly encourage you to test your projects with 3.7 during the beta phase and report issues found to&nbsp;<a href="https://bugs.python.org/" target="_blank">bugs.python.org</a>&nbsp;as soon as possible. While the release is feature complete entering the beta phase, it is possible that features may be modified or, in rare cases, deleted up until the start of the release candidate phase. &nbsp;Please keep in mind that this is a preview release and its use is not recommended for production environments. &nbsp;<i>Attention&nbsp;macOS users</i>: there is now a new installer variant for macOS 10.9+ that includes a built-in version of Tcl/Tk 8.6. This variant is expected to become the default version when 3.7.0 releases. &nbsp;Check it out!<br />
+<br />
+The next preview release will be&nbsp;<b>the release candidate</b>&nbsp;and is planned for&nbsp;<b>2018-05-21</b>&nbsp;followed by the&nbsp;<b>official release of 3.7.0,</b>&nbsp;planned for&nbsp;<b>2018-06-15</b>. You can find Python 3.7.0b4 and more information here:<br />
+<div style="margin: 0px;">
+&nbsp; &nbsp;&nbsp;<a href="https://www.python.org/downloads/release/python-370b4/" target="_blank">https://www.python.org/downloads/release/python-370b4/</a><br />
+<div>
+<br /></div>
+</div>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Ned Deily</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='https://pythoninsider.blogspot.com/2018/05/python-370b4-final-37-beta-now.html' rel='bookmark' title='permanent link'><abbr class='published' title='2018-05-02T20:18:00-04:00'>8:18 PM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+</span>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2017589384609424560&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2017589384609424560&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2017589384609424560&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2017589384609424560&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2017589384609424560&target=pinterest' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a><div class='goog-inline-block google-plus-share-container'><g:plusone source='blogger:blog:plusone' href='http://pythoninsider.blogspot.com/2018/05/python-370b4-final-37-beta-now.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+Labels:
+<a href='https://pythoninsider.blogspot.com/search/label/releases' rel='tag'>releases</a>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'><span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+          </div></div>
+        
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Tuesday, May 1, 2018</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='5922406739254645217'></a>
+<h3 class='post-title entry-title'>
+<a href='https://pythoninsider.blogspot.com/2018/05/python-2715-released.html'>Python 2.7.15 released</a>
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content'>
+The bugfix release <a href="https://www.python.org/downloads/release/python-2715/">Python 2.7.15</a> is now available for download.
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Benjamin</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='https://pythoninsider.blogspot.com/2018/05/python-2715-released.html' rel='bookmark' title='permanent link'><abbr class='published' title='2018-05-01T00:28:00-04:00'>12:28 AM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+</span>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=5922406739254645217&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=5922406739254645217&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=5922406739254645217&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=5922406739254645217&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=5922406739254645217&target=pinterest' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a><div class='goog-inline-block google-plus-share-container'><g:plusone source='blogger:blog:plusone' href='http://pythoninsider.blogspot.com/2018/05/python-2715-released.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'><span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+          </div></div>
+        
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Monday, April 16, 2018</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='1517194571959462612'></a>
+<h3 class='post-title entry-title'>
+<a href='https://pythoninsider.blogspot.com/2018/04/new-pypi-launched-legacy-pypi-shutting.html'>New PyPI launched, legacy PyPI shutting down April 30</a>
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content'>
+New PyPI launched, legacy PyPI shutting down April 30<br />
+<br />
+Starting today, the canonical Python Package Index is at https://pypi.org and uses the new Warehouse codebase.<br />
+<br />
+We announced the https://pypi.org beta on March 26 and your feedback and test usage have helped us get it production-ready.<br />
+<br />
+Monday April 16 (2018-04-16): We launched the new PyPI, redirecting browser traffic and API calls (including "pip install") from pypi.python.org to the new site. The old codebase is still available at https://legacy.pypi.org for now.<br />
+<br />
+Monday April 30 (2018-04-30): We plan to shut down legacy PyPI https://legacy.pypi.org . The address pypi.python.org will continue to redirect to Warehouse.<br />
+<br />
+For more details, see our roadmap: https://wiki.python.org/psf/WarehouseRoadmap<br />
+<br />
+If your site/service links to or uses pypi.python.org, you should start using pypi.org instead: https://warehouse.readthedocs.io/api-reference/integration-guide/#migrating-to-the-new-pypi <br />
+<br />
+Thank you.<br />
+<br />
+-Sumana Harihareswara on behalf of the PyPI Team
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Ernest W. Durbin III</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='https://pythoninsider.blogspot.com/2018/04/new-pypi-launched-legacy-pypi-shutting.html' rel='bookmark' title='permanent link'><abbr class='published' title='2018-04-16T13:07:00-04:00'>1:07 PM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+</span>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=1517194571959462612&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=1517194571959462612&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=1517194571959462612&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=1517194571959462612&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=1517194571959462612&target=pinterest' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a><div class='goog-inline-block google-plus-share-container'><g:plusone source='blogger:blog:plusone' href='http://pythoninsider.blogspot.com/2018/04/new-pypi-launched-legacy-pypi-shutting.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'><span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+          </div></div>
+        
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Saturday, April 14, 2018</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='1783819575295355113'></a>
+<h3 class='post-title entry-title'>
+<a href='https://pythoninsider.blogspot.com/2018/04/python-2715-release-candidate-1-is-now.html'>Python 2.7.15 release candidate 1 is now available</a>
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content'>
+<a href="https://www.python.org/downloads/release/python-2715rc1/">Python 2.7.15 release candidate 1</a> is now available for download. Please test with your applications and libraries and report any bugs. A final 2.7.15 release is expected at the end of April.
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Benjamin</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='https://pythoninsider.blogspot.com/2018/04/python-2715-release-candidate-1-is-now.html' rel='bookmark' title='permanent link'><abbr class='published' title='2018-04-14T22:33:00-04:00'>10:33 PM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+</span>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=1783819575295355113&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=1783819575295355113&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=1783819575295355113&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=1783819575295355113&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=1783819575295355113&target=pinterest' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a><div class='goog-inline-block google-plus-share-container'><g:plusone source='blogger:blog:plusone' href='http://pythoninsider.blogspot.com/2018/04/python-2715-release-candidate-1-is-now.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'><span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+        </div></div>
+      
+</div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='https://pythoninsider.blogspot.com/search?updated-max=2018-04-14T22:33:00-04:00&amp;max-results=7' id='Blog1_blog-pager-older-link' title='Older Posts'>Older Posts</a>
+</span>
+<a class='home-link' href='https://pythoninsider.blogspot.com/'>Home</a>
+</div>
+<div class='clear'></div>
+<div class='blog-feeds'>
+<div class='feed-links'>
+Subscribe to:
+<a class='feed-link' href='https://pythoninsider.blogspot.com/feeds/posts/default' target='_blank' type='application/atom+xml'>Posts (Atom)</a>
+</div>
+</div>
+<script type='text/javascript'>
+    window.___gcfg = { 'lang': 'en' };
+  </script>
+</div><div class='widget HTML' data-version='1' id='HTML2'>
+<script type='text/javascript'>
+                var disqus_shortname = 'pythoninsider';
+                var disqus_blogger_current_url = "https://pythoninsider.blogspot.com/";
+                if (!disqus_blogger_current_url.length) {
+                    disqus_blogger_current_url = "https://pythoninsider.blogspot.com/";
+                }
+                var disqus_blogger_homepage_url = "https://pythoninsider.blogspot.com/";
+                var disqus_blogger_canonical_homepage_url = "https://pythoninsider.blogspot.com/";
+            </script>
+<style type='text/css'>
+                    .post-comment-link { visibility: hidden; }
+                </style>
+<script type='text/javascript'>
+                (function() {
+                    var bloggerjs = document.createElement('script');
+                    bloggerjs.type = 'text/javascript';
+                    bloggerjs.async = true;
+                    bloggerjs.src = 'http://'+disqus_shortname+'.disqus.com/blogger_index.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(bloggerjs);
+                })();
+                </script>
+</div></div>
+</section>
+</div>
+<aside id='cside'>
+<div class='wshad' id='sidebar1'>
+<div class='section' id='sidebar-right-1'><div class='widget HTML' data-version='1' id='HTML1'>
+<h2 class='title'>Subscribe</h2>
+<div class='widget-content'>
+Subscribe to Python Insider via <a href="http://feeds.feedburner.com/PythonInsider">RSS</a>, <a href="http://feedburner.google.com/fb/a/mailverify?uri=PythonInsider&amp;loc=en_US">Email</a>, or <a href="http://twitter.com/PythonInsider">Twitter</a>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3941553907430899163&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target='configHTML1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget LinkList' data-version='1' id='LinkList1'>
+<h2>Related Links</h2>
+<div class='widget-content'>
+<ul>
+<li><a href='http://www.python.org/'>python.org</a></li>
+<li><a href='http://mail.python.org/mailman/listinfo/python-dev'>Python-Dev mailing list</a></li>
+<li><a href='http://docs.python.org/devguide/'>Python Developer's Guide</a></li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3941553907430899163&widgetType=LinkList&widgetId=LinkList1&action=editWidget&sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("LinkList1"));' target='configLinkList1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget LinkList' data-version='1' id='LinkList2'>
+<h2>Translations</h2>
+<div class='widget-content'>
+<ul>
+<li><a href='http://blog-cn.python.org/'>Chinese (Simplified)</a></li>
+<li><a href='http://blog-tw.python.org/'>Chinese (Traditional)</a></li>
+<li><a href='http://blog-fr.python.org/'>French</a></li>
+<li><a href='http://blog-de.python.org/'>German</a></li>
+<li><a href='http://blog-ja.python.org/'>Japanese</a></li>
+<li><a href='http://blog-ko.python.org/'>Korean</a></li>
+<li><a href='http://blog-pt.python.org/'>Portuguese</a></li>
+<li><a href='http://blog-ro.python.org/'>Romanian</a></li>
+<li><a href='http://blog-ru.python.org/'>Russian</a></li>
+<li><a href='http://blog-es.python.org/'>Spanish</a></li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3941553907430899163&widgetType=LinkList&widgetId=LinkList2&action=editWidget&sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("LinkList2"));' target='configLinkList2' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget BlogList' data-version='1' id='BlogList1'>
+<h2 class='title'>Python-Dev Blogs</h2>
+<div class='widget-content'>
+<div class='blog-list-container' id='BlogList1_container'>
+<ul id='BlogList1_blogs'>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='https://eli.thegreenplace.net/' target='_blank'>
+Eli Bendersky</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='https://eli.thegreenplace.net/2018/basics-of-futexes/' target='_blank'>
+Basics of Futexes
+</a>
+</span>
+<div class='item-time'>
+1 week ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://morepypy.blogspot.com/' target='_blank'>
+PyPy Status Blog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/PyPyStatusBlog/~3/KIsvzugb-Og/repeating-matrix-multiplication.html' target='_blank'>
+Repeating a Matrix Multiplication Benchmark
+</a>
+</span>
+<div class='item-time'>
+4 weeks ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://blog.ziade.org' target='_blank'>
+Tarek Ziadé</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://blog.ziade.org/2016/05/16/consistent-load-balancing/' target='_blank'>
+Consistent Load Balancing
+</a>
+</span>
+<div class='item-time'>
+2 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.wefearchange.org/' target='_blank'>
+Pumpichank</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://www.wefearchange.org/2015/04/creating-python-snaps.html' target='_blank'>
+Creating Python Snaps
+</a>
+</span>
+<div class='item-time'>
+3 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://ramblings.timgolden.me.uk' target='_blank'>
+Tim Golden</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://ramblings.timgolden.me.uk/2014/12/05/london-python-dojo-december-2014/' target='_blank'>
+London Python Dojo December 2014
+</a>
+</span>
+<div class='item-time'>
+3 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.bitdance.com/blog' target='_blank'>
+R. David Murray</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://www.bitdance.com/blog/2014/09/30_01_asycio_overview' target='_blank'>
+Asyncio Implementation Overview
+</a>
+</span>
+<div class='item-time'>
+3 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.voidspace.org.uk/python/weblog/index.shtml' target='_blank'>
+The Voidspace Techie Blog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/voidspace/~3/-liSpOmgsVc/arch_d7_2012_03_24.shtml' target='_blank'>
+unittest.mock and mock 1.0 alpha 1
+</a>
+</span>
+<div class='item-time'>
+6 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='https://rhettinger.wordpress.com' target='_blank'>
+Deep Thoughts by Raymond Hettinger</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='https://rhettinger.wordpress.com/2011/05/26/super-considered-super/' target='_blank'>
+Python&#8217;s super() considered super!
+</a>
+</span>
+<div class='item-time'>
+7 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://feeds.feedburner.com/CoderWhoSaysPy' target='_blank'>
+Brett Cannon</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://jessenoller.com/feed/' target='_blank'>
+Jesse Noller</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.boredomandlaziness.org/feeds/posts/default' target='_blank'>
+Boredom & Laziness</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://blog.briancurtin.com/feed/' target='_blank'>
+Brian Curtin</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.uthcode.com/blog/feeds/atom.xml' target='_blank'>
+Senthil Kumaran</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3941553907430899163&widgetType=BlogList&widgetId=BlogList1&action=editWidget&sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogList1"));' target='configBlogList1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div>
+</div><div class='widget BlogArchive' data-version='1' id='BlogArchive1'>
+<h2>Blog Archive</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>
+
+        &#9660;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2018/'>
+2018
+</a>
+<span class='post-count' dir='ltr'>(18)</span>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>
+
+        &#9660;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2018/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='https://pythoninsider.blogspot.com/2018/06/python-3.html'>Python&#160;3.7.0&#160;is now available (and so is 3.6.6)!
+
+...</a></li>
+<li><a href='https://pythoninsider.blogspot.com/2018/06/python-370rc1-and-366rc1-now-available.html'>Python 3.7.0rc1 and 3.6.6rc1 now available for tes...</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2018/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2018/04/'>
+April
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2018/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2018/02/'>
+February
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2018/01/'>
+January
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/'>
+2017
+</a>
+<span class='post-count' dir='ltr'>(17)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/10/'>
+October
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/01/'>
+January
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/'>
+2016
+</a>
+<span class='post-count' dir='ltr'>(18)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/10/'>
+October
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/'>
+2015
+</a>
+<span class='post-count' dir='ltr'>(14)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/01/'>
+January
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2014/'>
+2014
+</a>
+<span class='post-count' dir='ltr'>(8)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2014/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2014/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2014/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2014/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2014/02/'>
+February
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2013/'>
+2013
+</a>
+<span class='post-count' dir='ltr'>(5)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2013/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2013/10/'>
+October
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2013/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2013/02/'>
+February
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2012/'>
+2012
+</a>
+<span class='post-count' dir='ltr'>(9)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2012/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2012/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2012/10/'>
+October
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2012/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2012/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2012/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2012/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2011/'>
+2011
+</a>
+<span class='post-count' dir='ltr'>(25)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2011/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2011/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2011/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2011/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2011/04/'>
+April
+</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2011/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3941553907430899163&widgetType=BlogArchive&widgetId=BlogArchive1&action=editWidget&sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target='configBlogArchive1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget Profile' data-version='1' id='Profile1'>
+<h2>Contributors</h2>
+<div class='widget-content'>
+<ul>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/14971120963699387108' style='background-image: url(//www.blogger.com/img/logo-16.png);'>A.M. Kuchling</a></li>
+<li><a class='profile-name-link g-profile' href='https://plus.google.com/105172091805567849283' style='background-image: url(//www.google.com/images/icons/ui/gprofile_button-16.png);'>Alfonso de la Guarda Reyes</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/03855116138400732464' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Anthony Scopatz</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/08838587997498042260' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Antoine P.</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/06955536323236904839' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Benjamin</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/14604644394514192040' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Brian Curtin</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/14913018830568213369' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Davidmh</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/03794667532189865209' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Donald Stufft</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/01892352754222143463' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Doug Hellmann</a></li>
+<li><a class='profile-name-link g-profile' href='https://plus.google.com/102281137181642419132' style='background-image: url(//www.google.com/images/icons/ui/gprofile_button-16.png);'>Ernest W. Durbin III</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/06795605825443412201' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Ezio Melotti</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/14973145408214215809' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Georg Brandl</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/07543015027323408421' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Jesse</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/17574962105063127018' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Kelsey Hightower</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/13232068831778121461' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Larry Hastings</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/07757697862303956313' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Mathieu Leduc-Hamel</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/08761481986934375758' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Michael Markert</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/06351908417200979114' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Mike Driscoll</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/17112379650586333719' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Ned Deily</a></li>
+<li><a class='profile-name-link g-profile' href='https://plus.google.com/105644937960330777422' style='background-image: url(//www.google.com/images/icons/ui/gprofile_button-16.png);'>Nick Coghlan</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/17557923197983461835' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Paul Moore</a></li>
+<li><a class='profile-name-link g-profile' href='https://plus.google.com/116670685619813088895' style='background-image: url(//www.google.com/images/icons/ui/gprofile_button-16.png);'>Paulo Nuin</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/17437958274873977298' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Philip Jenvey</a></li>
+<li><a class='profile-name-link g-profile' href='https://plus.google.com/103916922127569633396' style='background-image: url(//www.google.com/images/icons/ui/gprofile_button-16.png);'>engelbert gruber</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/14658404449913582628' style='background-image: url(//www.blogger.com/img/logo-16.png);'>haypo</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/07627402554307001461' style='background-image: url(//www.blogger.com/img/logo-16.png);'>tp</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/10522887977715879728' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Éric Araujo</a></li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3941553907430899163&widgetType=Profile&widgetId=Profile1&action=editWidget&sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("Profile1"));' target='configProfile1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget HTML' data-version='1' id='HTML3'>
+<h2 class='title'>Copyright</h2>
+<div class='widget-content'>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://lh6.googleusercontent.com/proxy/Tzii5ZKsI7dvZuiSvLrKs_XzEe8s2g8z55YvhM7Pt9aY9PNP3_QC97ISq34dYN1iAOYzr-ng_ANmpXuj2POCaiGW6FWqblPLzg=s0-d"></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Python Insider</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.python.org/" property="cc:attributionName" rel="cc:attributionURL">the Python Core Developers</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://blog.python.org/" rel="dct:source">blog.python.org</a>.
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3941553907430899163&widgetType=HTML&widgetId=HTML3&action=editWidget&sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML3"));' target='configHTML3' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+<div id='attribution1'>
+<div class='section' id='attribution'><div class='widget Attribution' data-version='1' id='Attribution1'>
+<div class='widget-content' style='text-align: center;'>
+Powered by <a href='https://www.blogger.com' target='_blank'>Blogger</a>.
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3941553907430899163&widgetType=Attribution&widgetId=Attribution1&action=editWidget&sectionId=attribution' onclick='return _WidgetManager._PopupConfig(document.getElementById("Attribution1"));' target='configAttribution1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div>
+</div>
+</aside>
+<div style='clear:both'>&nbsp;</div>
+</div>
+<script src='https://apis.google.com/js/plusone.js' type='text/javascript'></script>
+
+<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/212315736-widgets.js"></script>
+<script type='text/javascript'>
+window['__wavt'] = 'AOuZoY4PFVzoewGQvmLKtvI1WH0Ej3bF4Q:1532521704998';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d3941553907430899163','//pythoninsider.blogspot.com/','3941553907430899163');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '3941553907430899163', 'title': 'Python Insider', 'url': 'https://pythoninsider.blogspot.com/', 'canonicalUrl': 'https://pythoninsider.blogspot.com/', 'homepageUrl': 'https://pythoninsider.blogspot.com/', 'searchUrl': 'https://pythoninsider.blogspot.com/search', 'canonicalHomepageUrl': 'https://pythoninsider.blogspot.com/', 'blogspotFaviconUrl': 'https://pythoninsider.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Python Insider - Atom\x22 href\x3d\x22https://pythoninsider.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22Python Insider - RSS\x22 href\x3d\x22https://pythoninsider.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Python Insider - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/3941553907430899163/posts/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'ieCssRetrofitLinks': '\x3c!--[if IE]\x3e\x3cscript type\x3d\x22text/javascript\x22 src\x3d\x22https://www.blogger.com/static/v1/jsbin/4060273893-ieretrofit.js\x22\x3e\x3c/script\x3e\n\x3c![endif]--\x3e', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/df84872f50feeb65', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Share to Twitter', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Google+', 'key': 'googlePlus', 'shareMessage': 'Share to Google+', 'target': 'googleplus'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'index', 'pageName': '', 'pageTitle': 'Python Insider'}}, {'name': 'features', 'data': {'cmt_anon_warn': 'false', 'lazy_images': 'false', 'poll_static': 'true', 'sharing_get_link_dialog': 'true', 'sharing_native': 'false'}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'Python Insider', 'description': 'Python core development news and information.', 'url': 'https://pythoninsider.blogspot.com/', 'type': 'feed', 'isSingleItem': false, 'isMultipleItems': true, 'isError': false, 'isPage': false, 'isPost': false, 'isHomepage': true, 'isArchive': false, 'isLabelSearch': false}}]);
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'useNgc': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/2160473140-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'main', null, document.getElementById('HTML2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar-right-1', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList1', 'sidebar-right-1', null, document.getElementById('LinkList1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList2', 'sidebar-right-1', null, document.getElementById('LinkList2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogListView', new _WidgetInfo('BlogList1', 'sidebar-right-1', null, document.getElementById('BlogList1'), {'numItemsToShow': 0, 'totalItems': 13}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar-right-1', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': 'Loading\x26hellip;'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebar-right-1', null, document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML3', 'sidebar-right-1', null, document.getElementById('HTML3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'attribution', null, document.getElementById('Attribution1'), {}, 'displayModeFull'));
+</script>
+</body>
+</html><!DOCTYPE html>
+<html class='v2' dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<link href='https://www.blogger.com/static/v1/widgets/2437439463-css_bundle_v2.css' rel='stylesheet' type='text/css'/>
+<link href='https://blog.python.org/favicon.ico' rel='icon' type='image/x-icon'/>
+<meta content='blogger' name='generator'/>
+<link href='https://blog.python.org/feeds/posts/default' rel='alternate' title='Python Insider - Atom' type='application/atom+xml'/>
+<link href='https://blog.python.org/feeds/posts/default?alt=rss' rel='alternate' title='Python Insider - RSS' type='application/rss+xml'/>
+<link href='https://www.blogger.com/feeds/3941553907430899163/posts/default' rel='service.post' title='Python Insider - Atom' type='application/atom+xml'/>
+<!--[if IE]><script type="text/javascript" src="https://www.blogger.com/static/v1/jsbin/2591933621-ieretrofit.js"></script> <![endif]-->
+<meta content='https://blog.python.org/' name='og:url:domain'/>
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>Python Insider</title>
+<meta name='author' value='The Python Community'/>
+<style id='page-skin-1' type='text/css'><!--
+
+--></style>
+<style id='template-skin-1' type='text/css'><!--
+
+--></style>
+<!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+<style type='text/css'>
+body {
+  font-family: Arial,Tahoma,Helvetica,FreeSans,sans-serif;
+  font-size: 12px;
+  color: #111;
+  background:#3272ac;
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.21, rgb(50,114,172)),
+    color-stop(0.84, rgb(250,229,164))
+);
+background-image: -moz-linear-gradient(
+    center bottom,
+    #3272ac 21%,
+    #fae5a4 84%
+);
+
+background-repeat:no-repeat;
+}
+
+h2 {font-size: 1em; }
+h3 { font-size: 1.2em}
+
+#wholeC {
+  background-color:#fff;
+  width: 90%;
+  margin: 0 auto 2em auto;
+}
+
+#cmain {
+  float:left;
+  width: 68%;
+  padding:0;
+  margin: 2em 0 2em 2%;
+}
+#cside {
+  float:right;
+  width: 23%;
+  margin-right: 2%;
+  margin-top: 2em;
+  margin-bottom: 3em;
+  padding-bottom: 3em;
+  font-size: 0.95em;
+}
+#cside a {
+font-size: 0.95em
+}
+#cside h2 {
+text-transform:uppercase;
+color: #715707
+}
+
+a { color: #142f46 }
+a:hover { color: #557 }
+a:visited { color: #334 }
+
+h2.date-header { font-size: 13px; }
+h3.post-title { font-size: 16px; margin-bottom: 1em; }
+
+div.date-outer {
+/* blog post container */
+margin: 0 0 2em 0;
+padding: 0;
+font-size:13px;
+line-height:133%;
+}
+
+header#chead {
+display: block;
+margin: 0 auto 1em auto;
+padding: 0;
+width: 70%;
+height:145px;
+overflow: hidden;
+color: #222;
+background: #fff;
+border-bottom: 1px solid #ddd; 
+
+}
+#Header1 {
+font-size:16px;
+}
+#Header1 .description {
+position:relative;
+top: -35px;
+left: 116px;
+}
+
+.wshad {
+    padding: 2em 8px;
+    border: 1px solid #99A;
+    -moz-box-shadow: 0 5px 10px #222;
+    -webkit-box-shadow: 0 5px 10px #222;
+    box-shadow: 0 5px 10px #222;
+}
+
+.post-footer {
+border-top:1px outset #ddd;border-right:1px inset #ddd;
+background-color: #f5f5f5;
+padding: 10px 5px;
+position:relative;
+left:-1.2em;
+opacity: 0.75;
+font-size:0.9em;
+}
+
+</style>
+<script src='https://code.jquery.com/jquery-3.2.1.slim.min.js'></script>
+<script>
+$(document).ready(function() {
+  $("a").each(function() {
+    var i = $(this).attr("href");
+    if (!i) {
+      return;
+    }
+    var n = i.replace("https://pythoninsider.blogspot.com", "https://blog.python.org");
+    $(this).attr("href", function() {
+      return n
+    })
+  })
+});
+</script>
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=3941553907430899163&amp;zx=b24fdbe2-f2b9-41ed-a2bc-6bcfb584a9d3' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=3941553907430899163&amp;zx=b24fdbe2-f2b9-41ed-a2bc-6bcfb584a9d3' rel='stylesheet'/></noscript>
+
+</head>
+<body>
+<div class='navbar section' id='navbar'><div class='widget Navbar' data-version='1' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"></div>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar.g?targetBlogID\x3d3941553907430899163\x26blogName\x3dPython+Insider\x26publishMode\x3dPUBLISH_MODE_BLOGSPOT\x26navbarType\x3dBLUE\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttps://pythoninsider.blogspot.com/search\x26blogLocale\x3den\x26v\x3d2\x26homepageUrl\x3dhttps://pythoninsider.blogspot.com/\x26vt\x3d-980863490298690034',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div id='wholeC'>
+<header id='chead'>
+<div class='header section' id='header'><div class='widget Header' data-version='1' id='Header1'>
+<div id='header-inner'>
+<a href='https://pythoninsider.blogspot.com/' style='display: block'>
+<img alt="Python Insider" height="139px; " id="Header1_headerimg" src="//2.bp.blogspot.com/-Bhao0h7cGF0/TY-us8aVYCI/AAAAAAAAAYw/IhOLTFSw34E/s1600/python-insider-header.png" style="display: block" width="600px; ">
+</a>
+<div class='descriptionwrapper'>
+<p class='description'><span>Python core development news and information.</span></p>
+</div>
+</div>
+</div></div>
+</header>
+<div id='cmain'>
+<section id='ccontent'>
+<div class='main section' id='main'><div class='widget Blog' data-version='1' id='Blog1'>
+<div class='blog-posts hfeed'>
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Saturday, April 14, 2018</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='930232376755773940'></a>
+<h3 class='post-title entry-title'>
+<a href='https://pythoninsider.blogspot.com/2018/04/pip-10-has-been-released.html'>Pip 10 has been released</a>
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content'>
+<span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">On behalf of the PyPA, I am pleased to announce that pip 10.0 has just been released. This release has been the culmination of many months of work by the community.</span><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">To install pip 10.0, you can run</span><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><span style="font-family: Courier New, Courier, monospace;"><span style="background-color: white; color: #222222; font-size: x-small;">&nbsp; &nbsp; python -m pip install --upgrade pip</span></span><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">or use get-pip, as described in https://pip.pypa.io/en/latest/installing. If you are using a version of pip supplied by your distribution vendor, vendor-supplied upgrades will be available in due course (or you can use pip 10 in a virtual environment).</span><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">(One minor issue with using get-pip on Windows - when you download get-pip.py, rename it to something that doesn't include "pip" in the name, such as "gp.py", as the standard name triggers a check in pip that aborts the run - this is being tracked in https://github.com/pypa/pip/issues/5219</span><span class="sewdexkob97wnyx" style="color: #222222; font-family: arial, sans-serif; font-size: x-small;"></span><span class="sewdexkob97wnyx" style="color: #222222; font-family: arial, sans-serif; font-size: x-small;"></span><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">).</span><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">Highlights of the new release:</span><br />
+<ul>
+<li>Python 2.6 is no longer supported - if you need pip on Python 2.6, you should stay on pip 9, which is the last version to support Python 2.6.</li>
+<li>Support for PEP 518, which allows projects to specify what packages they require in order to build from source. (PEP 518 support is currently limited, with full support coming in future versions - see the documentation for details).</li>
+<li>Significant improvements in Unicode handling for non-ASCII locales on Windows.</li>
+<li>A new "pip config" command.</li>
+<li>The default upgrade strategy has become "only-if-needed"</li>
+<li>Many bug fixes and minor improvements.</li>
+</ul>
+<span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">In addition, the previously announced reorganisation of pip's</span><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">internals has now taken place. Unless you are the author of code that</span><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">imports the pip module (or a user of such code), this change will not</span><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">affect you. If you are affected, please report the issue to the author of the</span><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">offending code (refer them to</span><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">https://mail.python.org/pipermail/distutils-sig/2017-October/031642.html</span><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">for the details of the announcement).</span><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">Thanks to everyone who put so much effort into the new release. Many</span><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">of the contributions came from community members, whether in the form</span><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">of code, participation in design discussions, or bug reports. The pip</span><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">development team is extremely grateful to everyone in the community</span><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">for their contributions.</span><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><br style="color: #222222; font-family: arial, sans-serif; font-size: small;" /><span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">Thanks,</span><br />
+<span style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: x-small;">Paul</span>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Paul Moore</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='https://pythoninsider.blogspot.com/2018/04/pip-10-has-been-released.html' rel='bookmark' title='permanent link'><abbr class='published' title='2018-04-14T08:49:00-04:00'>8:49 AM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+</span>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=930232376755773940&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=930232376755773940&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=930232376755773940&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=930232376755773940&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=930232376755773940&target=pinterest' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a><div class='goog-inline-block google-plus-share-container'><g:plusone source='blogger:blog:plusone' href='http://pythoninsider.blogspot.com/2018/04/pip-10-has-been-released.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'><span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+          </div></div>
+        
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Saturday, March 31, 2018</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='647258349724740999'></a>
+<h3 class='post-title entry-title'>
+<a href='https://pythoninsider.blogspot.com/2018/03/beta-release-of-pip-version-10.html'>Beta release of pip version 10</a>
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content'>
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">On behalf of the PyPA, I am pleased to announce that a beta release</span><br />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">10.0.0b1 of pip has just been released for testing by the community.</span><br />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">We're planning on a final release in 2 weeks' time, over the weekend</span><br />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">of 14/15 April.</span><br />
+<br style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: 12.8px;" />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">To install pip 10.0.0.b1, you can run</span><br />
+<br style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: 12.8px;" />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">&nbsp; &nbsp; python -m pip install --upgrade --pre pip</span><br />
+<br style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: 12.8px;" />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">(obviously, you should not do this in a production environment!)</span><br />
+<br style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: 12.8px;" />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">We would be grateful for all testing that users could do, to ensure</span><br />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">that when pip 10 is released it's as solid as we can make it.</span><br />
+<br style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: 12.8px;" />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">Highlights of the new release:</span><br />
+<br style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: 12.8px;" />
+<br />
+<ul>
+<li>Python 2.6 is no longer supported - if you need pip on Python 2.6, you should stay on pip 9, which is the last version to support Python 2.6.</li>
+<li>Support for PEP 518, which allows projects to specify what packages they require in order to build from source. (PEP 518 support is currently limited, with full support coming in future versions - see the documentation for details).</li>
+<li>Significant improvements in Unicode handling for non-ASCII locales on Windows.</li>
+<li>A new "pip config" command.</li>
+<li>The default upgrade strategy has become "only-if-needed"</li>
+<li>Many bug fixes and minor improvements.</li>
+</ul>
+<br />
+<br style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: 12.8px;" />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">In addition, the previously announced reorganisation of pip's</span><br />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">internals has now taken place. Unless you are the author of code that</span><br />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">imports the pip module (or a user of such code), this change will not</span><br />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">affect you. If you are, please report the issue to the author of the</span><br />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">affected code (refer them to</span><br />
+<a data-saferedirecturl="https://www.google.com/url?hl=en-GB&amp;q=https://mail.python.org/pipermail/distutils-sig/2017-October/031642.html&amp;source=gmail&amp;ust=1522583632751000&amp;usg=AFQjCNGFTknjXBgPRnDn_-OXBIiOe6yxSg" href="https://mail.python.org/pipermail/distutils-sig/2017-October/031642.html" rel="noreferrer" style="background-color: white; color: #1155cc; font-family: arial, sans-serif; font-size: 12.8px;" target="_blank">https://mail.python.org/<wbr></wbr>pipermail/distutils-sig/2017-<wbr></wbr>October/031642.html</a><br />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">for the details of the announcement).</span><br />
+<br style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: 12.8px;" />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">Please note that there is a minor issue with the NEWS file for this</span><br />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">release - the new features in 10.0.0b1 are reported as being for</span><br />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">"9.0.3 (2018-03-31)".</span><br />
+<br style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: 12.8px;" />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">If you discover any bugs while testing the new release, please report</span><br />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">them at&nbsp;</span><a data-saferedirecturl="https://www.google.com/url?hl=en-GB&amp;q=https://github.com/pypa/pip/issues&amp;source=gmail&amp;ust=1522583632751000&amp;usg=AFQjCNHoulZdQYi3n1anhx7xmSH-Vd__Yg" href="https://github.com/pypa/pip/issues" rel="noreferrer" style="background-color: white; color: #1155cc; font-family: arial, sans-serif; font-size: 12.8px;" target="_blank">https://github.com/pypa/pip/<wbr></wbr>issues</a><span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">.</span><br />
+<br style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: 12.8px;" />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">Thanks to everyone who put so much effort into the new release. Many</span><br />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">of the contributions came from community members, whether in the form</span><br />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">of code, participation in design discussions, or bug reports. The pip</span><br />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">development team is extremely grateful to everyone in the community</span><br />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">for their contributions.</span><br />
+<br style="background-color: white; color: #222222; font-family: arial, sans-serif; font-size: 12.8px;" />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">Thanks,</span><br />
+<span style="background-color: white; color: #222222; font-family: &quot;arial&quot; , sans-serif; font-size: 12.8px;">Paul</span>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Paul Moore</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='https://pythoninsider.blogspot.com/2018/03/beta-release-of-pip-version-10.html' rel='bookmark' title='permanent link'><abbr class='published' title='2018-03-31T07:56:00-04:00'>7:56 AM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+</span>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=647258349724740999&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=647258349724740999&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=647258349724740999&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=647258349724740999&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=647258349724740999&target=pinterest' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a><div class='goog-inline-block google-plus-share-container'><g:plusone source='blogger:blog:plusone' href='http://pythoninsider.blogspot.com/2018/03/beta-release-of-pip-version-10.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'><span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+          </div></div>
+        
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Thursday, March 29, 2018</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='4307909991702742538'></a>
+<h3 class='post-title entry-title'>
+<a href='https://pythoninsider.blogspot.com/2018/03/python-370b3-is-now-available-for.html'>Python 3.7.0b3 is now available for testing</a>
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content'>
+Python&nbsp;<b><a href="https://www.python.org/downloads/release/python-370b3/" target="_blank">3.7.0b3</a></b>&nbsp;is the third of four planned beta previews of Python 3.7, the next feature release of Python. Beta releases are intended to give you the opportunity to test new features and bug fixes and to prepare your projects to support the new feature release. We strongly encourage you to test your projects with 3.7 during the beta phase and report issues found to&nbsp;<a href="https://bugs.python.org/" target="_blank">bugs.python.org</a>&nbsp;as soon as possible. While the release is feature complete entering the beta phase, it is possible that features may be modified or, in rare cases, deleted up until the start of the release candidate phase. &nbsp;Please keep in mind that this is a preview release and its use is not recommended for production environments. &nbsp;Attention macOS users: there is now a new installer variant for macOS 10.9+ that includes a built-in version of Tcl/Tk 8.6. This variant is expected to become the default version when 3.7.0 releases. &nbsp;Check it out! The next preview release, 3.7.0b4, is planned for 2018-04-30. You can find Python 3.7.0b3 and more information here:<br />
+<div style="margin: 0px;">
+&nbsp; &nbsp;&nbsp;<a href="https://www.python.org/downloads/release/python-370b3/" target="_blank">https://www.python.org/downloads/release/python-370b3/</a></div>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Ned Deily</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='https://pythoninsider.blogspot.com/2018/03/python-370b3-is-now-available-for.html' rel='bookmark' title='permanent link'><abbr class='published' title='2018-03-29T21:42:00-04:00'>9:42 PM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+</span>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=4307909991702742538&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=4307909991702742538&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=4307909991702742538&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=4307909991702742538&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=4307909991702742538&target=pinterest' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a><div class='goog-inline-block google-plus-share-container'><g:plusone source='blogger:blog:plusone' href='http://pythoninsider.blogspot.com/2018/03/python-370b3-is-now-available-for.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+Labels:
+<a href='https://pythoninsider.blogspot.com/search/label/releases' rel='tag'>releases</a>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'><span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+          </div></div>
+        
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Wednesday, March 28, 2018</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='2903363399056824272'></a>
+<h3 class='post-title entry-title'>
+<a href='https://pythoninsider.blogspot.com/2018/03/python-365-is-now-available.html'>Python 3.6.5 is now available</a>
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content'>
+Python&nbsp;<b><a href="https://www.python.org/downloads/release/python-365/" target="_blank">3.6.5</a></b>&nbsp;is now available. &nbsp;3.6.5 is the fifth maintenance release of Python 3.6, which was initially released in 2016-12 to great interest. &nbsp;You can find Python 3.6.5 and more information here:<br />
+&nbsp; &nbsp;&nbsp;<a href="https://www.python.org/downloads/release/python-365/" target="_blank">https://www.python.org/downloads/release/python-365/</a><br />
+<br />
+See the <a href="https://docs.python.org/3.6/whatsnew/3.6.html" target="_blank">What&#8217;s New In Python 3.6</a> document for more information about features included in the 3.6 series. &nbsp;Detailed information about the changes made in 3.6.5 can be found in its&nbsp;<a href="https://docs.python.org/3.6/whatsnew/changelog.html#python-3-6-5-final" target="_blank">change log</a>. &nbsp;The next maintenance release is expected to follow in about 3 months, around the end of 2018-06.<br />
+<br />
+<b>Attention macOS users</b>: as of 3.6.5, there is a new additional installer variant for macOS 10.9+ that includes a built-in version of Tcl/Tk 8.6. &nbsp;This variant is expected to become the default variant in future releases. &nbsp;<a href="https://www.python.org/downloads/release/python-365/" target="_blank">Check it out</a>!<br />
+<br />
+Thanks to all of the many volunteers who help make Python Development and these releases possible! &nbsp;Please consider supporting our efforts by volunteering yourself or through organization contributions to the <a href="https://www.python.org/psf/" target="_blank">Python Software Foundation</a>.<br />
+<br />
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Ned Deily</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='https://pythoninsider.blogspot.com/2018/03/python-365-is-now-available.html' rel='bookmark' title='permanent link'><abbr class='published' title='2018-03-28T17:59:00-04:00'>5:59 PM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+</span>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2903363399056824272&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2903363399056824272&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2903363399056824272&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2903363399056824272&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2903363399056824272&target=pinterest' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a><div class='goog-inline-block google-plus-share-container'><g:plusone source='blogger:blog:plusone' href='http://pythoninsider.blogspot.com/2018/03/python-365-is-now-available.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+Labels:
+<a href='https://pythoninsider.blogspot.com/search/label/releases' rel='tag'>releases</a>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'><span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+          </div></div>
+        
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Monday, March 26, 2018</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='2138252335865905425'></a>
+<h3 class='post-title entry-title'>
+<a href='https://pythoninsider.blogspot.com/2018/03/the-all-new-python-package-index-is-now.html'>The all new Python Package Index is now in beta at pypi.org</a>
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content'>
+<span style="background-color: white; color: #333333; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; white-space: pre-line;">The new Python Package Index at </span><a href="https://pypi.org/" rel="nofollow" style="box-sizing: border-box; color: #0088cc; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; text-decoration: none; white-space: pre-line;">https://pypi.org</a><span style="background-color: white; color: #333333; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; white-space: pre-line;"> is now in beta.</span><div>
+<span style="background-color: white; color: #333333; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; white-space: pre-line;"><br /></span></div>
+<div>
+<span style="background-color: white; color: #333333; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; white-space: pre-line;">This means the site is robust, but we anticipate needing more user testing and changes before it is "production-ready" and can fully replace </span><a href="https://pypi.python.org/" rel="nofollow" style="box-sizing: border-box; color: #0088cc; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; text-decoration: none; white-space: pre-line;">https://pypi.python.org</a><span style="background-color: white; color: #333333; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; white-space: pre-line;"> . We hope to complete the transition before the end of April 2018.</span></div>
+<div>
+<span style="background-color: white; color: #333333; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; white-space: pre-line;"><br /></span></div>
+<div>
+<span style="background-color: white; color: #333333; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; white-space: pre-line;">We're still working to ensure the new codebase and infrastructure are reliable. So please don't rely on it (yet) unless you can handle the occasional minor outage.</span></div>
+<div>
+<span style="background-color: white; color: #333333; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; white-space: pre-line;"><br /></span></div>
+<div>
+<span style="background-color: white; color: #333333; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; white-space: pre-line;">But we want you to try the new PyPI, test it, and tell us if you have any problems. More at </span><a href="https://pyfound.blogspot.com/2018/03/warehouse-all-new-pypi-is-now-in-beta.html" rel="nofollow" style="box-sizing: border-box; color: #0088cc; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; text-decoration: none; white-space: pre-line;">The Python Software Foundation main blog</a><span style="color: #333333; font-family: Helvetica Neue, Helvetica, Arial, sans-serif;"><span style="background-color: white; font-size: 14px; white-space: pre-line;">.</span></span></div>
+<div>
+<span style="background-color: white; color: #333333; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; white-space: pre-line;"><br /></span></div>
+<div>
+<span style="background-color: white; color: #333333; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; white-space: pre-line;">Thank you.</span><br />
+<span style="background-color: white; color: #333333; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; white-space: pre-line;">-Sumana Harihareswara on behalf of the PyPI Team</span></div>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Ernest W. Durbin III</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='https://pythoninsider.blogspot.com/2018/03/the-all-new-python-package-index-is-now.html' rel='bookmark' title='permanent link'><abbr class='published' title='2018-03-26T16:59:00-04:00'>4:59 PM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+</span>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2138252335865905425&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2138252335865905425&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2138252335865905425&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2138252335865905425&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2138252335865905425&target=pinterest' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a><div class='goog-inline-block google-plus-share-container'><g:plusone source='blogger:blog:plusone' href='http://pythoninsider.blogspot.com/2018/03/the-all-new-python-package-index-is-now.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'><span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+          </div></div>
+        
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Wednesday, March 14, 2018</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='2426318252699118086'></a>
+<h3 class='post-title entry-title'>
+<a href='https://pythoninsider.blogspot.com/2018/03/python-365rc1-is-now-available-for.html'>Python 3.6.5rc1 is now available for testing</a>
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content'>
+Python <b><a href="https://www.python.org/downloads/release/python-365rc1/" target="_blank">3.6.5rc1</a></b> is the first release candidate for Python 3.6.5, the next maintenance release of Python 3.6. &nbsp;While 3.6.5rc1 is a preview release and, thus, not intended for production environments, we encourage you to explore it and provide feedback via the Python bug tracker (<a href="https://bugs.python.org/">https://bugs.python.org</a>). &nbsp;<b>3.6.5</b> is planned for final release on 2018-03-26 with the next maintenance release expected to follow in about 3 months. &nbsp;You can find Python 3.6.5rc1 and more information here:<br />
+&nbsp; &nbsp; <a href="https://www.python.org/downloads/release/python-365rc1/">https://www.python.org/downloads/release/python-365rc1/</a><br />
+<br />
+<b>Attention macOS users</b>: as of 3.6.5rc1, there is a new additional installer variant for macOS 10.9+ that includes a built-in version of Tcl/Tk 8.6. &nbsp;This variant is expected to become the default variant in future releases. &nbsp;Check it out!<br />
+<div>
+<br /></div>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Ned Deily</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='https://pythoninsider.blogspot.com/2018/03/python-365rc1-is-now-available-for.html' rel='bookmark' title='permanent link'><abbr class='published' title='2018-03-14T00:46:00-04:00'>12:46 AM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+</span>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2426318252699118086&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2426318252699118086&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2426318252699118086&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2426318252699118086&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2426318252699118086&target=pinterest' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a><div class='goog-inline-block google-plus-share-container'><g:plusone source='blogger:blog:plusone' href='http://pythoninsider.blogspot.com/2018/03/python-365rc1-is-now-available-for.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+Labels:
+<a href='https://pythoninsider.blogspot.com/search/label/releases' rel='tag'>releases</a>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'><span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+          </div></div>
+        
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Wednesday, February 28, 2018</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='2248383352121093922'></a>
+<h3 class='post-title entry-title'>
+<a href='https://pythoninsider.blogspot.com/2018/02/python-370b2-is-now-available-for.html'>Python 3.7.0b2 is now available for testing</a>
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content'>
+Python&nbsp;<b><a href="https://www.python.org/downloads/release/python-370b2/" target="_blank">3.7.0b2</a></b>&nbsp;is the second of four planned beta previews of Python 3.7, the next feature release of Python. Beta releases are intended to give you the opportunity to test new features and bug fixes and to prepare your projects to support the new feature release. We strongly encourage you to test your projects with 3.7 during the beta phase and report issues found to&nbsp;<a href="https://bugs.python.org/" target="_blank">bugs.python.org</a>&nbsp;as soon as possible. While the release is feature complete entering the beta phase, it is possible that features may be modified or, in rare cases, deleted up until the start of the release candidate phase. &nbsp;Please keep in mind that this is a preview release and its use is not recommended for production environments. &nbsp;Attention macOS users: as of b1, there is a new installer variant for macOS 10.9+ that includes a built-in version of Tcl/Tk 8.6. This variant is expected to become the default version when 3.7.0 releases. &nbsp;Check it out! The next preview release, 3.7.0b2, is planned for 2018-03-26. You can find Python 3.7.0b2 and more information here:<br />
+<div style="margin: 0px;">
+&nbsp; &nbsp;&nbsp;<a href="https://www.python.org/downloads/release/python-370b2/" target="_blank">https://www.python.org/downloads/release/python-370b2/</a></div>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Ned Deily</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='https://pythoninsider.blogspot.com/2018/02/python-370b2-is-now-available-for.html' rel='bookmark' title='permanent link'><abbr class='published' title='2018-02-28T01:01:00-05:00'>1:01 AM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+</span>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2248383352121093922&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2248383352121093922&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2248383352121093922&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2248383352121093922&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=3941553907430899163&postID=2248383352121093922&target=pinterest' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a><div class='goog-inline-block google-plus-share-container'><g:plusone source='blogger:blog:plusone' href='http://pythoninsider.blogspot.com/2018/02/python-370b2-is-now-available-for.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+Labels:
+<a href='https://pythoninsider.blogspot.com/search/label/releases' rel='tag'>releases</a>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'><span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+        </div></div>
+      
+</div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='https://pythoninsider.blogspot.com/' id='Blog1_blog-pager-newer-link' title='Newer Posts'>Newer Posts</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='https://pythoninsider.blogspot.com/search?updated-max=2018-02-28T01:01:00-05:00&amp;max-results=7&amp;start=7&amp;by-date=false' id='Blog1_blog-pager-older-link' title='Older Posts'>Older Posts</a>
+</span>
+<a class='home-link' href='https://pythoninsider.blogspot.com/'>Home</a>
+</div>
+<div class='clear'></div>
+<div class='blog-feeds'>
+<div class='feed-links'>
+Subscribe to:
+<a class='feed-link' href='https://pythoninsider.blogspot.com/feeds/posts/default' target='_blank' type='application/atom+xml'>Posts (Atom)</a>
+</div>
+</div>
+<script type='text/javascript'>
+    window.___gcfg = { 'lang': 'en' };
+  </script>
+</div><div class='widget HTML' data-version='1' id='HTML2'>
+<script type='text/javascript'>
+                var disqus_shortname = 'pythoninsider';
+                var disqus_blogger_current_url = "https://pythoninsider.blogspot.com/search?updated-max=2018-04-14T19:33:00-07:00&amp;max-results=7";
+                if (!disqus_blogger_current_url.length) {
+                    disqus_blogger_current_url = "https://pythoninsider.blogspot.com/search?updated-max=2018-04-14T19:33:00-07:00&amp;max-results=7";
+                }
+                var disqus_blogger_homepage_url = "https://pythoninsider.blogspot.com/";
+                var disqus_blogger_canonical_homepage_url = "https://pythoninsider.blogspot.com/";
+            </script>
+<style type='text/css'>
+                    .post-comment-link { visibility: hidden; }
+                </style>
+<script type='text/javascript'>
+                (function() {
+                    var bloggerjs = document.createElement('script');
+                    bloggerjs.type = 'text/javascript';
+                    bloggerjs.async = true;
+                    bloggerjs.src = 'http://'+disqus_shortname+'.disqus.com/blogger_index.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(bloggerjs);
+                })();
+                </script>
+</div></div>
+</section>
+</div>
+<aside id='cside'>
+<div class='wshad' id='sidebar1'>
+<div class='section' id='sidebar-right-1'><div class='widget HTML' data-version='1' id='HTML1'>
+<h2 class='title'>Subscribe</h2>
+<div class='widget-content'>
+Subscribe to Python Insider via <a href="http://feeds.feedburner.com/PythonInsider">RSS</a>, <a href="http://feedburner.google.com/fb/a/mailverify?uri=PythonInsider&amp;loc=en_US">Email</a>, or <a href="http://twitter.com/PythonInsider">Twitter</a>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3941553907430899163&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target='configHTML1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget LinkList' data-version='1' id='LinkList1'>
+<h2>Related Links</h2>
+<div class='widget-content'>
+<ul>
+<li><a href='http://www.python.org/'>python.org</a></li>
+<li><a href='http://mail.python.org/mailman/listinfo/python-dev'>Python-Dev mailing list</a></li>
+<li><a href='http://docs.python.org/devguide/'>Python Developer's Guide</a></li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3941553907430899163&widgetType=LinkList&widgetId=LinkList1&action=editWidget&sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("LinkList1"));' target='configLinkList1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget LinkList' data-version='1' id='LinkList2'>
+<h2>Translations</h2>
+<div class='widget-content'>
+<ul>
+<li><a href='http://blog-cn.python.org/'>Chinese (Simplified)</a></li>
+<li><a href='http://blog-tw.python.org/'>Chinese (Traditional)</a></li>
+<li><a href='http://blog-fr.python.org/'>French</a></li>
+<li><a href='http://blog-de.python.org/'>German</a></li>
+<li><a href='http://blog-ja.python.org/'>Japanese</a></li>
+<li><a href='http://blog-ko.python.org/'>Korean</a></li>
+<li><a href='http://blog-pt.python.org/'>Portuguese</a></li>
+<li><a href='http://blog-ro.python.org/'>Romanian</a></li>
+<li><a href='http://blog-ru.python.org/'>Russian</a></li>
+<li><a href='http://blog-es.python.org/'>Spanish</a></li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3941553907430899163&widgetType=LinkList&widgetId=LinkList2&action=editWidget&sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("LinkList2"));' target='configLinkList2' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget BlogList' data-version='1' id='BlogList1'>
+<h2 class='title'>Python-Dev Blogs</h2>
+<div class='widget-content'>
+<div class='blog-list-container' id='BlogList1_container'>
+<ul id='BlogList1_blogs'>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='https://eli.thegreenplace.net/' target='_blank'>
+Eli Bendersky</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='https://eli.thegreenplace.net/2018/basics-of-futexes/' target='_blank'>
+Basics of Futexes
+</a>
+</span>
+<div class='item-time'>
+1 week ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://morepypy.blogspot.com/' target='_blank'>
+PyPy Status Blog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/PyPyStatusBlog/~3/KIsvzugb-Og/repeating-matrix-multiplication.html' target='_blank'>
+Repeating a Matrix Multiplication Benchmark
+</a>
+</span>
+<div class='item-time'>
+4 weeks ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://blog.ziade.org' target='_blank'>
+Tarek Ziadé</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://blog.ziade.org/2016/05/16/consistent-load-balancing/' target='_blank'>
+Consistent Load Balancing
+</a>
+</span>
+<div class='item-time'>
+2 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.wefearchange.org/' target='_blank'>
+Pumpichank</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://www.wefearchange.org/2015/04/creating-python-snaps.html' target='_blank'>
+Creating Python Snaps
+</a>
+</span>
+<div class='item-time'>
+3 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://ramblings.timgolden.me.uk' target='_blank'>
+Tim Golden</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://ramblings.timgolden.me.uk/2014/12/05/london-python-dojo-december-2014/' target='_blank'>
+London Python Dojo December 2014
+</a>
+</span>
+<div class='item-time'>
+3 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.bitdance.com/blog' target='_blank'>
+R. David Murray</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://www.bitdance.com/blog/2014/09/30_01_asycio_overview' target='_blank'>
+Asyncio Implementation Overview
+</a>
+</span>
+<div class='item-time'>
+3 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.voidspace.org.uk/python/weblog/index.shtml' target='_blank'>
+The Voidspace Techie Blog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/voidspace/~3/-liSpOmgsVc/arch_d7_2012_03_24.shtml' target='_blank'>
+unittest.mock and mock 1.0 alpha 1
+</a>
+</span>
+<div class='item-time'>
+6 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='https://rhettinger.wordpress.com' target='_blank'>
+Deep Thoughts by Raymond Hettinger</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='https://rhettinger.wordpress.com/2011/05/26/super-considered-super/' target='_blank'>
+Python&#8217;s super() considered super!
+</a>
+</span>
+<div class='item-time'>
+7 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://feeds.feedburner.com/CoderWhoSaysPy' target='_blank'>
+Brett Cannon</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://jessenoller.com/feed/' target='_blank'>
+Jesse Noller</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.boredomandlaziness.org/feeds/posts/default' target='_blank'>
+Boredom & Laziness</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://blog.briancurtin.com/feed/' target='_blank'>
+Brian Curtin</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.uthcode.com/blog/feeds/atom.xml' target='_blank'>
+Senthil Kumaran</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3941553907430899163&widgetType=BlogList&widgetId=BlogList1&action=editWidget&sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogList1"));' target='configBlogList1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div>
+</div><div class='widget BlogArchive' data-version='1' id='BlogArchive1'>
+<h2>Blog Archive</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>
+
+        &#9660;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2018/'>
+2018
+</a>
+<span class='post-count' dir='ltr'>(18)</span>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>
+
+        &#9660;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2018/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='https://pythoninsider.blogspot.com/2018/06/python-3.html'>Python&#160;3.7.0&#160;is now available (and so is 3.6.6)!
+
+...</a></li>
+<li><a href='https://pythoninsider.blogspot.com/2018/06/python-370rc1-and-366rc1-now-available.html'>Python 3.7.0rc1 and 3.6.6rc1 now available for tes...</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2018/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2018/04/'>
+April
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2018/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2018/02/'>
+February
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2018/01/'>
+January
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/'>
+2017
+</a>
+<span class='post-count' dir='ltr'>(17)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/10/'>
+October
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2017/01/'>
+January
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/'>
+2016
+</a>
+<span class='post-count' dir='ltr'>(18)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/10/'>
+October
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2016/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/'>
+2015
+</a>
+<span class='post-count' dir='ltr'>(14)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2015/01/'>
+January
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2014/'>
+2014
+</a>
+<span class='post-count' dir='ltr'>(8)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2014/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2014/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2014/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2014/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2014/02/'>
+February
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2013/'>
+2013
+</a>
+<span class='post-count' dir='ltr'>(5)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2013/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2013/10/'>
+October
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2013/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2013/02/'>
+February
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2012/'>
+2012
+</a>
+<span class='post-count' dir='ltr'>(9)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2012/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2012/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2012/10/'>
+October
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2012/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2012/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2012/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2012/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2011/'>
+2011
+</a>
+<span class='post-count' dir='ltr'>(25)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2011/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2011/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2011/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2011/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2011/04/'>
+April
+</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://pythoninsider.blogspot.com/2011/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3941553907430899163&widgetType=BlogArchive&widgetId=BlogArchive1&action=editWidget&sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target='configBlogArchive1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget Profile' data-version='1' id='Profile1'>
+<h2>Contributors</h2>
+<div class='widget-content'>
+<ul>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/14971120963699387108' style='background-image: url(//www.blogger.com/img/logo-16.png);'>A.M. Kuchling</a></li>
+<li><a class='profile-name-link g-profile' href='https://plus.google.com/105172091805567849283' style='background-image: url(//www.google.com/images/icons/ui/gprofile_button-16.png);'>Alfonso de la Guarda Reyes</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/03855116138400732464' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Anthony Scopatz</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/08838587997498042260' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Antoine P.</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/06955536323236904839' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Benjamin</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/14604644394514192040' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Brian Curtin</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/14913018830568213369' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Davidmh</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/03794667532189865209' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Donald Stufft</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/01892352754222143463' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Doug Hellmann</a></li>
+<li><a class='profile-name-link g-profile' href='https://plus.google.com/102281137181642419132' style='background-image: url(//www.google.com/images/icons/ui/gprofile_button-16.png);'>Ernest W. Durbin III</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/06795605825443412201' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Ezio Melotti</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/14973145408214215809' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Georg Brandl</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/07543015027323408421' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Jesse</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/17574962105063127018' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Kelsey Hightower</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/13232068831778121461' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Larry Hastings</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/07757697862303956313' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Mathieu Leduc-Hamel</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/08761481986934375758' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Michael Markert</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/06351908417200979114' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Mike Driscoll</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/17112379650586333719' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Ned Deily</a></li>
+<li><a class='profile-name-link g-profile' href='https://plus.google.com/105644937960330777422' style='background-image: url(//www.google.com/images/icons/ui/gprofile_button-16.png);'>Nick Coghlan</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/17557923197983461835' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Paul Moore</a></li>
+<li><a class='profile-name-link g-profile' href='https://plus.google.com/116670685619813088895' style='background-image: url(//www.google.com/images/icons/ui/gprofile_button-16.png);'>Paulo Nuin</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/17437958274873977298' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Philip Jenvey</a></li>
+<li><a class='profile-name-link g-profile' href='https://plus.google.com/103916922127569633396' style='background-image: url(//www.google.com/images/icons/ui/gprofile_button-16.png);'>engelbert gruber</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/14658404449913582628' style='background-image: url(//www.blogger.com/img/logo-16.png);'>haypo</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/07627402554307001461' style='background-image: url(//www.blogger.com/img/logo-16.png);'>tp</a></li>
+<li><a class='profile-name-link g-profile' href='https://www.blogger.com/profile/10522887977715879728' style='background-image: url(//www.blogger.com/img/logo-16.png);'>Éric Araujo</a></li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3941553907430899163&widgetType=Profile&widgetId=Profile1&action=editWidget&sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("Profile1"));' target='configProfile1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget HTML' data-version='1' id='HTML3'>
+<h2 class='title'>Copyright</h2>
+<div class='widget-content'>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://lh6.googleusercontent.com/proxy/Tzii5ZKsI7dvZuiSvLrKs_XzEe8s2g8z55YvhM7Pt9aY9PNP3_QC97ISq34dYN1iAOYzr-ng_ANmpXuj2POCaiGW6FWqblPLzg=s0-d"></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Python Insider</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.python.org/" property="cc:attributionName" rel="cc:attributionURL">the Python Core Developers</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://blog.python.org/" rel="dct:source">blog.python.org</a>.
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3941553907430899163&widgetType=HTML&widgetId=HTML3&action=editWidget&sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML3"));' target='configHTML3' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+<div id='attribution1'>
+<div class='section' id='attribution'><div class='widget Attribution' data-version='1' id='Attribution1'>
+<div class='widget-content' style='text-align: center;'>
+Powered by <a href='https://www.blogger.com' target='_blank'>Blogger</a>.
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=3941553907430899163&widgetType=Attribution&widgetId=Attribution1&action=editWidget&sectionId=attribution' onclick='return _WidgetManager._PopupConfig(document.getElementById("Attribution1"));' target='configAttribution1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div>
+</div>
+</aside>
+<div style='clear:both'>&nbsp;</div>
+</div>
+<script src='https://apis.google.com/js/plusone.js' type='text/javascript'></script>
+
+<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/212315736-widgets.js"></script>
+<script type='text/javascript'>
+window['__wavt'] = 'AOuZoY5gpI0A7dMQvkXWOtzwM5wn9qxypA:1532521662848';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d3941553907430899163','//pythoninsider.blogspot.com/search?updated-max\x3d2018-04-14T19:33:00-07:00\x26max-results\x3d7','3941553907430899163');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '3941553907430899163', 'title': 'Python Insider', 'url': 'https://pythoninsider.blogspot.com/search?updated-max\x3d2018-04-14T19:33:00-07:00\x26max-results\x3d7', 'canonicalUrl': 'https://pythoninsider.blogspot.com/search?updated-max\x3d2018-04-14T19:33:00-07:00\x26max-results\x3d7', 'homepageUrl': 'https://pythoninsider.blogspot.com/', 'searchUrl': 'https://pythoninsider.blogspot.com/search', 'canonicalHomepageUrl': 'https://pythoninsider.blogspot.com/', 'blogspotFaviconUrl': 'https://pythoninsider.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Python Insider - Atom\x22 href\x3d\x22https://pythoninsider.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22Python Insider - RSS\x22 href\x3d\x22https://pythoninsider.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Python Insider - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/3941553907430899163/posts/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'ieCssRetrofitLinks': '\x3c!--[if IE]\x3e\x3cscript type\x3d\x22text/javascript\x22 src\x3d\x22https://www.blogger.com/static/v1/jsbin/4060273893-ieretrofit.js\x22\x3e\x3c/script\x3e\n\x3c![endif]--\x3e', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/df84872f50feeb65', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Share to Twitter', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Google+', 'key': 'googlePlus', 'shareMessage': 'Share to Google+', 'target': 'googleplus'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'index', 'pageName': '', 'pageTitle': 'Python Insider'}}, {'name': 'features', 'data': {'cmt_anon_warn': 'false', 'lazy_images': 'false', 'poll_static': 'true', 'sharing_get_link_dialog': 'true', 'sharing_native': 'false'}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'Python Insider', 'description': 'Python core development news and information.', 'url': 'https://pythoninsider.blogspot.com/search?updated-max\x3d2018-04-14T19:33:00-07:00\x26max-results\x3d7', 'type': 'feed', 'isSingleItem': false, 'isMultipleItems': true, 'isError': false, 'isPage': false, 'isPost': false, 'isHomepage': false, 'isArchive': false, 'isSearch': true, 'isLabelSearch': false, 'search': {}}}]);
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'useNgc': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/2160473140-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'main', null, document.getElementById('HTML2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar-right-1', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList1', 'sidebar-right-1', null, document.getElementById('LinkList1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList2', 'sidebar-right-1', null, document.getElementById('LinkList2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogListView', new _WidgetInfo('BlogList1', 'sidebar-right-1', null, document.getElementById('BlogList1'), {'numItemsToShow': 0, 'totalItems': 13}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar-right-1', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': 'Loading\x26hellip;'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebar-right-1', null, document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML3', 'sidebar-right-1', null, document.getElementById('HTML3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'attribution', null, document.getElementById('Attribution1'), {}, 'displayModeFull'));
+</script>
+</body>
+</html>

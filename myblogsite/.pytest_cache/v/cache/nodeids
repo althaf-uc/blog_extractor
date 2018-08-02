@@ -1,0 +1,19 @@
+[
+  "test_abc.py::test_parse_author_name",
+  "test_abc.py::test_parse_title",
+  "test_abc.py::test_parse_title_1",
+  "test_abc.py::test_parse_title_2",
+  "test_abc.py::test_parse_author_exception",
+  "test_abc.py::test_parse_date",
+  "test_abc.py::test_parse_time",
+  "test_abc.py::test_parse_time_exception",
+  "test_abc.py::test_parse_comments",
+  "test_abc.py::test_parse_comments_exception",
+  "test_abc.py::test_parse_contents",
+  "test_abc.py::test_zero_division",
+  "test_abc.py::test_b[eggs]",
+  "test_abc.py::test_b[1]",
+  "test_abc.py::test_b[2]",
+  "test_abc.py::test_b[3]",
+  "test_abc.py::test_b[7]"
+]
