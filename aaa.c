@@ -1,9 +1,4 @@
-#include<stdio.h>
-void main()
-{
-int num,i,j;
-scanf("%d",&num);
-for(i=1;i<=num;i++)
+#i
 {
 for(j=1;j<=num;j++)
 {
