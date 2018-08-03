@@ -1,2 +1,2 @@
 # blog_extractor
-#it is for demo purpose
+#it is for d
